@@ -28,29 +28,29 @@ const HeaderStyled = styled.header`
     }
 `;
 
-const Header = ({ getQuery, putQuery}) => {
-    const inputRef = useRef('');
+const Header = ({ getQuery, putQuery }) => {
+  const inputRef = useRef('');
 
-    const handleChange = event => (putQuery(event))
-    const handleSubmit = search => {
-        getQuery(search);
+  const handleChange = event => (putQuery(event))
+  const handleSubmit = search => {
+    getQuery(search);
 
-        inputRef.current.value = '';
-    }
+    inputRef.current.value = '';
+  }
 
-    return (
-        <HeaderStyled>
-            <h1>Rock Movies Site</h1>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    placeholder="Search term..."
-                    onChange={event => handleChange(event.target.value)}
-                    ref={inputRef}
-                />
-            </form>
-        </HeaderStyled>
-    );
+  return (
+    <HeaderStyled>
+      <h1>Rock Movies Site</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search term..."
+          onChange={event => handleChange(event.target.value)}
+          ref={inputRef}
+        />
+      </form>
+    </HeaderStyled>
+  );
 }
 
 export default Header;

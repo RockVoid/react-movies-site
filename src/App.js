@@ -33,11 +33,18 @@ const App = () => {
 
   return (
     <>
-      <Header getQuery={handleSubmit} putQuery={handleChange}></Header>
+      <Header
+        getQuery={handleSubmit}
+        putQuery={handleChange}
+      />
       <MainSection>
-        {movieList.length ? movieList.map(movie => <ShowMovie key={movie.id} {...movie}/>) : <Error/>}
+        {
+          movieList.length
+            ? movieList.map(movie => <ShowMovie key={movie.id} {...movie} />)
+            : <Error />
+        }
       </MainSection>
-      <Footer></Footer>
+      <Footer />
     </>
   );
 }

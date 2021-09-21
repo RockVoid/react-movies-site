@@ -79,27 +79,27 @@ const MovieDiv = styled.div`
 `;
 
 const ShowMovie = ({ title, vote_average, overview, poster_path }) => {
-    const setAverage = v_average => {
-        if (v_average < 5) return 'red';
-        const note = v_average >= 8 ? 'green' : 'yellow';
-        return note;
-    }
+	const setAverage = v_average => {
+		if (v_average < 5) return 'red';
+		const note = v_average >= 8 ? 'green' : 'yellow';
+		return note;
+	}
 
-    return (
-        <MovieDiv>
-            <div className="front">
-                <img src={poster_path ? imgAPI + poster_path : NoImg} alt={title} />
-                <div className="front__info-front">
-                    <h2>{title}</h2>
-                    <span className={setAverage(vote_average)}>{vote_average}</span>
-                </div>
-            </div>
-            <div className="back">
-                <h2>Overview</h2>
-                <p>{overview ? overview : "Sorry. This movie don't have overview."}</p>
-            </div>
-        </MovieDiv>
-    );
+	return (
+		<MovieDiv>
+			<div className="front">
+				<img src={poster_path ? imgAPI + poster_path : NoImg} alt={title} />
+				<div className="front__info-front">
+					<h2>{title}</h2>
+					<span className={setAverage(vote_average)}>{vote_average}</span>
+				</div>
+			</div>
+			<div className="back">
+				<h2>Overview</h2>
+				<p>{overview ? overview : "Sorry. This movie don't have overview."}</p>
+			</div>
+		</MovieDiv>
+	);
 }
 
 export default ShowMovie;

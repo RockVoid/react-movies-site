@@ -20,50 +20,46 @@ const StyleFooter = styled.footer`
     }
 `;
 
+const linksMenu = [
+	{
+		content: "Github",
+		link: "https://github.com/RockVoid",
+	},
+	{
+		content: "Visit the API link",
+		link: "https://developers.themoviedb.org",
+	},
+	{
+		content: "LinkedIn",
+		link: "https://www.linkedin.com/in/roque-souza-costa-6aa8171ba/",
+	},
+	{
+		content: "Portfolio",
+		link: "https://rockvoid.github.io/",
+	},
+];
+
 const Footer = () => {
-    return (
+	return (
         <StyleFooter>
             <h3>Roque Costa Dev</h3>
             <ul>
-                <li>
-                    <a
-                        href="https://github.com/RockVoid"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        GitHub
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://developers.themoviedb.org/3/authentication/how-do-i-generate-a-session-id"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit the API link
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://www.linkedin.com/in/roque-souza-costa-6aa8171ba/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="https://rockvoid.github.io/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Portfolio
-                    </a>
-                </li>
+							{linksMenu.map(item => {
+								return (
+									<li>
+										<a
+											href={item.link}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											{item.content}
+										</a>
+									</li>
+								)
+							})}
             </ul>
             <small>&copy; Thanks Movie API :D</small>
-        </StyleFooter>
+        </StyleFooter >
     );
 }
 
